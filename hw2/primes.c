@@ -29,7 +29,7 @@ int main(int argc, const char** argv){
     {
         /* TODO: fill in the code that outputs the prime numbers */
         /*   in the range [lowerBound,upperBound] in ascending order */
-        for (int num = lowerBound; num < upperBound; ++num) {
+        for (int num = lowerBound; num <= upperBound; ++num) {
             // initially assume num is prime
             int isPrime = 1;
 
@@ -40,13 +40,13 @@ int main(int argc, const char** argv){
 
             // if num != 1, then check all possible divisors of num in brute force fashion
             for (int possible_factor = 2; (possible_factor < num) && isPrime; ++possible_factor) {
-                if (num % possible_factor) {
+                if (num % possible_factor == 0) {
                     isPrime = 0;
                 }
             }
 
             if (isPrime) {
-                printf("%d", num);
+                printf("%d\n", num);
             }
         }
 
