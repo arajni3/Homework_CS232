@@ -45,6 +45,7 @@ int main(int argc, const char** argv){
                 }
             }
 
+            // print num if num is prime
             if (isPrime) {
                 printf("%d\n", num);
             }
