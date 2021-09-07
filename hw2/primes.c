@@ -38,7 +38,7 @@ int main(int argc, const char** argv){
                 isPrime = 0;
             }
 
-            // if num != 1, then check all possible divisors of num in brute force fashion
+            // if num > 1, then check all possible divisors of num in brute force fashion
             for (int possible_factor = 2; (possible_factor < num) && isPrime; ++possible_factor) {
                 if (num % possible_factor == 0) {
                     isPrime = 0;
