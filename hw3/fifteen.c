@@ -189,14 +189,11 @@ void init(void)
     */
     int tile_1_x, tile_1_y, tile_2_x, tile_2_y;
 
+    // empty space is denoted by a tile of 0
+    board[d - 1][d - 1] = 0;
+
     for (int i = 0; i < d; ++i) {
         for (int j = 0; j < d; ++j) {
-            
-            // empty space is denoted by a tile of 0
-            if ((i == d - 1) && (j == d - 1)) {
-                board[i][j] = 0;
-                break;
-            }
 
             /**
             * formula for board[i][j] when board[i][j] is not the empty space is 
