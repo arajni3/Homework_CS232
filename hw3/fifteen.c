@@ -281,6 +281,7 @@ short won(void)
 
     for (int i = 0; i < d - 1; ++i) {
         for (int j = 0; j < d - 1; ++j) {
+            
             // use formula for board[i][j] if game is won and board[i][j] is not supposed to be empty
             //board[i][j] = d * (d - (i + 1)) + (d - (j + 1));
             if (board[i][j] != (d * i) + (j + 1)) {
