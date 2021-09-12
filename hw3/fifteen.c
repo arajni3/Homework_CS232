@@ -196,7 +196,7 @@ void init(void)
         for (int j = 0; j < d; ++j) {
 
             /**
-            * formula for board[i][j] when board[i][j] is not the empty space is 
+            * Formula for board[i][j] when board[i][j] is not the empty space is 
             * board[i][j] = d * (d - (i + 1)) + (d - (j + 1));
             * this formula is equivalent to the one below, but the one below 
             * is more similar to the formula to check if the game is won in the function won() below
