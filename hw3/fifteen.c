@@ -273,16 +273,14 @@ short move(int tile)
 short won(void)
 {
     // TODO
-    for (int i = 0; i < d; ++i) {
-        for (int j = 0; j < d; ++j) {
-            
-            // empty space should be denoted by a tile of 0
-            if ((i == d - 1) && (j == d - 1)) {
-                if (board[i][j] != 0) {
-                    return 0;
-                }
-            }
 
+    // empty space should be denoted by a tile of 0
+    if (board[d - 1][d - 1] != 0) {
+        return 0;
+    }
+
+    for (int i = 0; i < d - 1; ++i) {
+        for (int j = 0; j < d - 1; ++j) {
             // use formula for board[i][j] if game is won and board[i][j] is not supposed to be empty
             //board[i][j] = d * (d - (i + 1)) + (d - (j + 1));
             if (board[i][j] != (d * i) + (j + 1)) {
