@@ -182,6 +182,13 @@ void greet(void)
 void init(void)
 {
     // TODO
+
+    /**
+     * In case d is even, need respective coordinates of tiles 1 and 2 to swap them after 
+     * first initialization
+    */
+    int tile_1_x, tile_1_y, tile_2_x, tile_2_y;
+
     for (int i = 0; i < d; ++i) {
         for (int j = 0; j < d; ++j) {
             
@@ -198,7 +205,23 @@ void init(void)
             * is more similar to the formula to check if the game is won in the function won() below
             */
             board[i][j] = (d * d) - (d * i) - (j + 1);
+            
+            if (board[i][j] == 1) {
+                tile_1_x = i;
+                tile_1_y = j;
+            }
+            if (board[i][j] == 2) {
+                tile_2_x = i;
+                tile_2_y = j;
+            }
         }
+    }
+
+    // swap tiles 1 and 2 in case d is even
+    if (d % 2 == 0) {
+        int temp = board[tile_1_x][tile_1_y];
+        board[tile_1_x][tile_1_y] = board[tile_2_x][tile_2_y];
+        board[tile_2_x][tile_2_y] = temp;
     }
 }
 
