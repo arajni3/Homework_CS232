@@ -21,7 +21,6 @@ struct listNode* crawl(char* start_url, int numHops, int *n, int MAX_N){
   strncpy(pListStart->addr, startAddr, MAX_ADDR_LENGTH);
   pListStart->next = NULL;
   pListStart->numTerms = 0;
-  
   ++(*n);
 
   /* start the crawling */
@@ -38,7 +37,6 @@ struct listNode* crawl(char* start_url, int numHops, int *n, int MAX_N){
       hopNum--; // try again for this hop in the next iteration
     } else if (*n < MAX_N) {
       insertBack(pListStart, destAddr);
-      //indexPage(destAddr);
       strncpy(startAddr, destAddr, MAX_ADDR_LENGTH);
       ++(*n);
     } else {
