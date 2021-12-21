@@ -11,9 +11,9 @@
  */
 struct listNode{
   // MAX_ADDR_LENGTH == 1000
-  char addr[1000];
   int numTerms;
   struct listNode *next;
+  char addr[1000];
   //struct trienode *index_trie;
 };
 
