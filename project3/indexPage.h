@@ -1,3 +1,5 @@
+#ifndef INDEXPAGE_H
+#define INDEXPAGE_H
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -23,3 +25,4 @@ void freeTrieMemory(struct trienode* root);
 int getText(const char* srcAddr, char* buffer, const int bufSize);
 
 void printTrieContentsHelper(struct trienode* current, char* buffer_beginning, char* buffer_end);
+#endif

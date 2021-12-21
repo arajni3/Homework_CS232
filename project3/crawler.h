@@ -1,3 +1,5 @@
+#ifndef CRAWLER_H
+#define CRAWLER_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +38,7 @@ void printAddresses(const struct listNode *pNode);
 /*
  * frees the memory associated with this node and all subsequent nodes
  */
-void destroyList(struct listNode *pNode);
+void destroyList(struct listNode *pNode, int *n);
   
 /*
  * srcAddr should be a web address (e.g., http://www.yahoo.com).
@@ -47,3 +49,4 @@ void destroyList(struct listNode *pNode);
 int getLink(const char* srcAddr, char* link, const int maxLinkLength);
 
 struct listNode* crawl(char* start_url, int numHops, int *n, int MAX_N);
+#endif

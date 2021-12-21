@@ -33,10 +33,7 @@ struct listNode* crawl(char* start_url, int numHops, int *n, int MAX_N){
       break;
     }
 
-    if(contains(pListStart, destAddr)){
-      //printf("Cycle detected on hop %d: address %s\n", hopNum, destAddr);
-      hopNum--; // try again for this hop in the next iteration
-    } else if (*n < MAX_N) {
+    if ((!(contains(pListStart, destAddr))) && (*n < MAX_N)) {
       insertBack(pListStart, destAddr);
       //indexPage(destAddr);
       strncpy(startAddr, destAddr, MAX_ADDR_LENGTH);
@@ -114,7 +111,7 @@ void printAddresses(const struct listNode *pNode){
 /*
  * frees the memory associated with this node and all subsequent nodes
  */
-void destroyList(struct listNode *pNode){
+void destroyList(struct listNode *pNode, int *n){
   // TODO: complete this
   while (pNode != NULL) {
     
@@ -124,6 +121,7 @@ void destroyList(struct listNode *pNode){
     // free up the portion of heap memory to which pNode is pointing
     //freeTrieMemory(pNode->index_trie);
     free(pNode);
+    --(*n);
 
     // now continue looping by setting pNode equal to the next node
     pNode = nextNode;
