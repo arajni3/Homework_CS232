@@ -38,20 +38,12 @@ int main(int argc, char* argv[]) {
             }
 
             if (backup == temp) {
-<<<<<<< HEAD
                 destroyList(backup, &n);
-=======
-                destroyList(backup);
->>>>>>> d19485eedf974e124c49bd33e2c0b46d98376307
                 backup = NULL;
                 temp = NULL;
                 mylist = NULL;
             } else {
-<<<<<<< HEAD
                 destroyList(backup->next, &n);
-=======
-                destroyList(backup->next);
->>>>>>> d19485eedf974e124c49bd33e2c0b46d98376307
                 backup->next = NULL;
             }
 
@@ -247,11 +239,7 @@ int main(int argc, char* argv[]) {
         freeTrieMemory(tries[i]);
     }
     // free all linked list heap memory
-<<<<<<< HEAD
     destroyList(urls, &n);
-=======
-    destroyList(urls);
->>>>>>> d19485eedf974e124c49bd33e2c0b46d98376307
     back = NULL;
 
     // free url heap memory, close pipe, and we're done
